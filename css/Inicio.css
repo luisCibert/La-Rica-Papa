@@ -2,22 +2,78 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
-header{
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
+body{
+    background-color: #f8f8f8;
+    color: #333;
+    
+}
+
+/* ===== TITULO ===== */
+body > h1{
     text-align: center;
+    background-color:black;
+    color: white;
+    padding: 20px;
 }
 nav{
-    background-color: #8B4513;
-    padding: 10px 40px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
+    background-color: #9c5311;
     align-items: center;
+    padding: 15px 30px;
+     flex-wrap: wrap; /* IMPORTANTE */
 }
-img {
+#logo img{
+    width: 80px;
     height: auto;
+}
+
+.lisCentro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 70px;
+}
+.lisCentro li a{
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.lisCentro li a:hover{
+   color: #ffd700;
+}
+.lisDerecha{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 10px;
+}
+.lisDerecha li p{
+    color: white;
+    font-weight: bold;
+}
+input[type="search"]{
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+body > img{
     width: 100%;
-    display: block;
+    height: 600px;
+    object-fit: cover;
+}
+/* ===== SECCION BIENVENIDA ===== */
+body div.bienvenida{
+    text-align: center;
+    padding: 30px;
+}
+body div.bienvenida p{
+    font-size: 18px;
+    line-height: 1.6;
 }
