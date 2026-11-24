@@ -6,9 +6,10 @@
     overflow-x: hidden;
 }
 body{
-    background-color: #f8f8f8;
-    color: #333;
-    
+    background-color: #FAF8F3;
+    color: #1F2921;
+    margin: 0; 
+    line-height: 1.6;
 }
 
 /* ===== TITULO ===== */
@@ -21,10 +22,15 @@ body > h1{
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: #9c5311;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08);
     align-items: center;
     padding: 15px 30px;
-     flex-wrap: wrap; /* IMPORTANTE */
+    gap: 16px;
+    flex-wrap: wrap; /* IMPORTANTE */
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 #logo img{
     width: 80px;
@@ -37,16 +43,18 @@ nav{
     align-items: center;
     list-style: none;
     gap: 70px;
+    font-weight: 600;
+    font-size: 0.98rem;
 }
 .lisCentro li a{
-    color: white;
+    color: #1F2921;
     text-decoration: none;
     font-size: 32px;
     font-weight: bold;
     transition: 0.3s;
 }
 .lisCentro li a:hover{
-   color: #ffd700;
+   color: #2E7D32;
 }
 .lisDerecha{
     display: flex;
@@ -54,18 +62,23 @@ nav{
     align-items: center;
     gap: 10px;
 }
-.lisDerecha li p{
-    color: white;
-    font-weight: bold;
+.lisDerecha input[type="search"] {
+  padding: 8px 14px;
+  border: 1.5px solid #D5DDD5;
+  border-radius: 999px;
+  background-color: #FAF8F3;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
 }
-input[type="search"]{
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
+
+.lisDerecha input[type="search"]:focus {
+  border-color: #2E7D32;
+  background-color: #FFFFFF;
 }
 body > img{
     width: 100%;
-    height: 600px;
+    height: 360px;
     object-fit: cover;
 }
 /* ===== SECCION BIENVENIDA ===== */
@@ -76,4 +89,139 @@ body div.bienvenida{
 body div.bienvenida p{
     font-size: 18px;
     line-height: 1.6;
+}
+/* ===== sobre-nosotros ===== */
+section.sobre-nosotros{
+    text-align: center;
+    padding: 30px;
+
+}
+.pilares{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+.pilares > div{
+   flex: 1;
+   background-color: #96a8d7;
+   border: 1.5px solid #e0e0e0;
+   border-top: 4px solid #2e7d32;
+   border-radius: 10px;
+   padding: 20px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.pilares > div:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+.pilares h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2e7d32;
+    font-size: 1.2rem;
+}
+.pilares p{
+    margin: 0;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+/* Contenedor general de la sección (apunta al <section> que contiene .grid-productos) */
+section:has(.grid-productos) {
+  max-width: 1120px;
+  margin: 48px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+section:has(.grid-productos) h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  color: #1b4332;
+}
+
+.subtitulo-seccion {
+  margin: 0 auto 32px;
+  max-width: 600px;
+  color: #526052;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Cuadrícula adaptable de productos */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+/* Tarjeta de producto */
+.card-producto {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8e2;
+  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.08);
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(27, 67, 50, 0.14);
+}
+
+/* Resalte especial para la tarjeta con clase .destacada */
+.card-producto.destacada {
+  border: 2px solid #2e7d32;
+}
+
+/* Etiqueta flotante superior */
+.etiqueta {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background-color: #2e7d32;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* Imagen del producto */
+.card-producto img {
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenido textual de la tarjeta */
+.card-contenido {
+  padding: 20px;
+}
+
+.card-contenido h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  color: #182518;
+}
+
+.card-contenido p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #4a584a;
 }
